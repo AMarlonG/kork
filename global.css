@@ -22,6 +22,14 @@
     --border-radius: 8px;
     --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     --max-width-container: 1200px;
+    
+    /* Calculated from SVG path diagonal: arctan((425.49-68.23)/(178.39-96.15)) */
+    --frame-skew-angle: 12.9deg;
+    
+    /* Line spacing - distance between each line */
+    --line-spacing: 20%;
+    /* Actual spacing between lines in viewport units */
+    --actual-line-spacing: 1.6vw;
 }
 
 /* Base Styles */
@@ -56,19 +64,18 @@ header {
 .frame {
     position: absolute;
     top: 0;
-    left: -25%;
-    width: 80%;
+    left: -1%;
+    width: 110%;
     height: 100%;
     background: url('https://images.unsplash.com/photo-1519682718457-c82ce8296645?w=1200&h=800&fit=crop&ixlib=rb-4.1.0') center/cover;
-    transform: skewX(15deg);
-    border-radius: 0 4vw 0 0;
-    overflow: hidden;
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 258 425"><path d="M178.38,68.23C170.77,29.34,136.65,0,95.77,0H0l96.15,425.49h162.25L178.39,68.23h-.01Z" fill="white"/></svg>') no-repeat center/contain;
+    -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 258 425"><path d="M178.38,68.23C170.77,29.34,136.65,0,95.77,0H0l96.15,425.49h162.25L178.39,68.23h-.01Z" fill="white"/></svg>') no-repeat center/contain;
 }
 
 .lines {
     position: absolute;
     top: 0;
-    left: 59.45%;
+    left: 63.75%;
     width: 8%;
     height: 100%;
 }
@@ -76,34 +83,35 @@ header {
 .line {
     position: absolute;
     background-color: var(--color-green);
-    width: 5px;
+    width: 4px;
     height: 100%;
-    border-radius: 2px;
-    transform: skew(15deg);
+    border-radius: 0;
+    transform: skew(var(--frame-skew-angle));
     transform-origin: center bottom;
 }
 
 .line-1 {
-    left: 20%;
+    left: var(--line-spacing);
 }
 
 .line-2 {
-    left: 40%;
+    left: calc(2 * var(--line-spacing));
 }
 
 .line-3 {
-    left: 60%;
+    left: calc(3 * var(--line-spacing));
 }
 
 .circle {
     position: absolute;
     top: 0;
-    left: 63%;
+    left: 67.5%;
     width: min(15vw, 80px);
     height: min(15vw, 80px);
     background-color: var(--color-green);
     border-radius: 50%;
 }
+
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
