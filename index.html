@@ -4,15 +4,178 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kringkastingsorkestret</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="global.css">
 </head>
 <body>
     <header>
-        <h1>Kringkastingsorkestret</h1>
+        <div class="kork-logo">
+            <div class="frame"></div>
+            <div class="lines">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
+            </div>
+            <div class="circle"></div>
+        </div>
     </header>
     
     <main>
-        <p>Welcome to our website.</p>
+        <section class="video-cards">
+            <div class="card">
+                <h3 class="card-title">Kork i Aulaen</h3>
+                <div class="card-image">
+                    <video autoplay muted loop poster="https://images.unsplash.com/photo-1519682718457-c82ce8296645?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        <!-- Orchestra playing - replace with actual video URL -->
+                    </video>
+                </div>
+                <p class="read-more">Les mer om konsertserien her →</p>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Kork i Store Studio</h3>
+                <div class="card-image">
+                    <video autoplay muted loop poster="https://byggogbevar.no/media/4402/mineralittpuss-paa-store-studio-nrk-foto-betong-consult.jpg?width=1320&format=webp&v=1d457262182a1d0">
+                        <!-- Musicians in big room - replace with actual video URL -->
+                    </video>
+                </div>
+                <p class="read-more">Les mer om konsertserien her →</p>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Kork i hele landet</h3>
+                <div class="card-image">
+                    <video autoplay muted loop poster="https://g.acdn.no/obscura/API/dynamic/r1/ece5/tr_1200_1200_s_f/0000/avno/2015/3/8/22/10kulkari1_1.jpg?chk=79253D">
+                        <!-- Orchestra in nature - replace with actual video URL -->
+                    </video>
+                </div>
+                <p class="read-more">Les mer om konsertserien her →</p>
+            </div>
+        </section>
+        
+        <section class="concerts-section">
+            <h2>Se vår neste konsert</h2>
+            <div class="concerts-carousel">
+                <div class="concert-card">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop" alt="Concert">
+                    <div class="concert-info">
+                        <h4 class="concert-title">Vårkonsert</h4>
+                        <p class="concert-date">15. mars 2024, kl. 19.00</p>
+                        <p class="concert-venue">Aulaen</p>
+                        <a href="#" class="concert-link">Les mer →</a>
+                        <button class="ticket-btn">Kjøp billett</button>
+                    </div>
+                </div>
+                <div class="concert-card">
+                    <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=300&h=300&fit=crop" alt="Concert">
+                    <div class="concert-info">
+                        <h4 class="concert-title">Klassiske mesterverk</h4>
+                        <p class="concert-date">22. mars 2024, kl. 20.00</p>
+                        <p class="concert-venue">Store Studio</p>
+                        <a href="#" class="concert-link">Les mer →</a>
+                        <button class="ticket-btn">Kjøp billett</button>
+                    </div>
+                </div>
+                <div class="concert-card">
+                    <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=300&h=300&fit=crop" alt="Concert">
+                    <div class="concert-info">
+                        <h4 class="concert-title">Utendørskonsert</h4>
+                        <p class="concert-date">5. april 2024, kl. 15.00</p>
+                        <p class="concert-venue">Frognerparken</p>
+                        <a href="#" class="concert-link">Les mer →</a>
+                        <button class="ticket-btn">Kjøp billett</button>
+                    </div>
+                </div>
+                <div class="concert-card">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop" alt="Concert">
+                    <div class="concert-info">
+                        <h4 class="concert-title">Kammermusikk</h4>
+                        <p class="concert-date">12. april 2024, kl. 18.30</p>
+                        <p class="concert-venue">Store Studio</p>
+                        <a href="#" class="concert-link">Les mer →</a>
+                        <button class="ticket-btn">Kjøp billett</button>
+                    </div>
+                </div>
+                <div class="concert-card">
+                    <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=300&h=300&fit=crop" alt="Concert">
+                    <div class="concert-info">
+                        <h4 class="concert-title">Symfoni nr. 9</h4>
+                        <p class="concert-date">20. april 2024, kl. 19.30</p>
+                        <p class="concert-venue">Aulaen</p>
+                        <a href="#" class="concert-link">Les mer →</a>
+                        <button class="ticket-btn">Kjøp billett</button>
+                    </div>
+                </div>
+                <div class="concert-card">
+                    <img src="https://images.unsplash.com/photo-1458560871784-56d23406c091?w=300&h=300&fit=crop" alt="Concert">
+                    <div class="concert-info">
+                        <h4 class="concert-title">Filmmusikk</h4>
+                        <p class="concert-date">28. april 2024, kl. 20.00</p>
+                        <p class="concert-venue">Aulaen</p>
+                        <a href="#" class="concert-link">Les mer →</a>
+                        <button class="ticket-btn">Kjøp billett</button>
+                    </div>
+                </div>
+                <div class="concert-card">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop" alt="Concert">
+                    <div class="concert-info">
+                        <h4 class="concert-title">Barnekonserter</h4>
+                        <p class="concert-date">5. mai 2024, kl. 11.00</p>
+                        <p class="concert-venue">Store Studio</p>
+                        <a href="#" class="concert-link">Les mer →</a>
+                        <button class="ticket-btn">Kjøp billett</button>
+                    </div>
+                </div>
+                <div class="concert-card">
+                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=300&h=300&fit=crop" alt="Concert">
+                    <div class="concert-info">
+                        <h4 class="concert-title">Moderne klassikere</h4>
+                        <p class="concert-date">12. mai 2024, kl. 19.00</p>
+                        <p class="concert-venue">Aulaen</p>
+                        <a href="#" class="concert-link">Les mer →</a>
+                        <button class="ticket-btn">Kjøp billett</button>
+                    </div>
+                </div>
+                <div class="concert-card">
+                    <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=300&h=300&fit=crop" alt="Concert">
+                    <div class="concert-info">
+                        <h4 class="concert-title">17. mai konsert</h4>
+                        <p class="concert-date">18. mai 2024, kl. 14.00</p>
+                        <p class="concert-venue">Slottsparken</p>
+                        <a href="#" class="concert-link">Les mer →</a>
+                        <button class="ticket-btn">Kjøp billett</button>
+                    </div>
+                </div>
+                <div class="concert-card">
+                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=300&h=300&fit=crop" alt="Concert">
+                    <div class="concert-info">
+                        <h4 class="concert-title">Sommerkonsert</h4>
+                        <p class="concert-date">25. mai 2024, kl. 16.00</p>
+                        <p class="concert-venue">Vigelandsparken</p>
+                        <a href="#" class="concert-link">Les mer →</a>
+                        <button class="ticket-btn">Kjøp billett</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="conductor-section">
+            <a href="#" class="conductor-link">Møt sjefsdirigent Holly Hyun Choe →</a>
+            <a href="#" class="conductor-link">Møt gjestedirigent Miho Hazama →</a>
+            <a href="#" class="conductor-link">Bli kjent med musikerne i Kork →</a>
+            <a href="#" class="conductor-link">Se hele Korks administrasjon →</a>
+        </section>
+        
+        <section class="newsletter-section">
+            <a href="#" class="newsletter-link">Meld deg på vårt nyhetsbrev her →</a>
+            <p class="newsletter-subtitle">Følg med på alle våre konserter og aktiviteter</p>
+        </section>
     </main>
+    
+    <footer>
+        <p>NRK Kringkastingsorkestret</p>
+        <p>E-post: kork@nrk.no</p>
+        <p>Telefon: 91 88 55 18</p>
+        <p>Orkestersjef: Rolf Lennart Stensø</p>
+    </footer>
+    
 </body>
 </html>
