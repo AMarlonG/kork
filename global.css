@@ -112,6 +112,14 @@ header {
     border-radius: 50%;
 }
 
+.nrk-logo {
+    position: absolute;
+    bottom: 0;
+    left: 70%;
+    width: 350px;
+    height: auto;
+}
+
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
