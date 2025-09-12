@@ -64,18 +64,18 @@ header {
 .frame {
     position: absolute;
     top: 0;
-    left: -1%;
-    width: 110%;
+    left: -20%;
+    width: 100vw;
     height: 100%;
-    background: url('https://images.unsplash.com/photo-1519682718457-c82ce8296645?w=1200&h=800&fit=crop&ixlib=rb-4.1.0') center/cover;
-    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 258 425"><path d="M178.38,68.23C170.77,29.34,136.65,0,95.77,0H0l96.15,425.49h162.25L178.39,68.23h-.01Z" fill="white"/></svg>') no-repeat center/contain;
-    -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 258 425"><path d="M178.38,68.23C170.77,29.34,136.65,0,95.77,0H0l96.15,425.49h162.25L178.39,68.23h-.01Z" fill="white"/></svg>') no-repeat center/contain;
+    object-fit: cover;
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-537 0 795 425"><path d="M178.38,68.23C170.77,29.34,136.65,0,95.77,0H-537V425.49l633.15,0h162.25L178.39,68.23h-.01Z" fill="white"/></svg>') no-repeat center/contain;
+    -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-537 0 795 425"><path d="M178.38,68.23C170.77,29.34,136.65,0,95.77,0H-537V425.49l633.15,0h162.25L178.39,68.23h-.01Z" fill="white"/></svg>') no-repeat center/contain;
 }
 
 .lines {
     position: absolute;
     top: 0;
-    left: 63.75%;
+    left: 60%;
     width: 8%;
     height: 100%;
 }
@@ -105,7 +105,7 @@ header {
 .circle {
     position: absolute;
     top: 0;
-    left: 67.5%;
+    left: 63.5%;
     width: min(15vw, 80px);
     height: min(15vw, 80px);
     background-color: var(--color-green);
