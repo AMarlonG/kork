@@ -1,3 +1,31 @@
+/* Font Declarations */
+@font-face {
+    font-family: 'NRK Sans';
+    src: url('./font/NRKSans-Regular_112393614.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NRK Sans';
+    src: url('./font/NRKSans-RegularItalic_595751658.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'NRK Sans';
+    src: url('./font/NRKSans-Black_2588582551.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NRK Sans';
+    src: url('./font/NRKSans-BlackItalic_2132894195.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
 /* CSS Custom Properties (Variables) */
 :root {
     --color-dark-blue: #01405C;
@@ -6,12 +34,13 @@
     --color-text: #333;
     --color-white: #ffffff;
     
-    --font-family-base: Arial, sans-serif;
+    --font-family-base: 'NRK Sans', Arial, sans-serif;
     --font-size-base: 1rem;
     --font-size-large: 3.5rem;
     --font-size-xl: 6rem;
     
     --spacing-xs: 0.5rem;
+    --spacing-xxs: 0.25rem;
     --spacing-sm: 1rem;
     --spacing-md: 1.5rem;
     --spacing-lg: 2rem;
@@ -27,9 +56,7 @@
     --frame-skew-angle: 12.9deg;
     
     /* Line spacing - distance between each line */
-    --line-spacing: 20%;
-    /* Actual spacing between lines in viewport units */
-    --actual-line-spacing: 1.6vw;
+    --line-spacing: 20cqi;
 }
 
 /* Base Styles */
@@ -37,129 +64,137 @@ body {
     font-family: var(--font-family-base);
     font-size: var(--font-size-base);
     color: var(--color-text);
-    background: linear-gradient(to bottom, var(--color-dark-blue) 0%, var(--color-dark-blue) 50%, var(--color-light-green) 100%);
+    background: var(--color-dark-blue);
     min-height: 100vh;
 }
 
 /* Layout Components */
 header {
     background: transparent;
-    padding: var(--spacing-xl) 0;
-    text-align: center;
-    min-height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Kork Logo Design */
-.kork-logo {
-    position: relative;
-    width: 100vw;
-    height: 60vh;
+    padding: 0;
     margin: 0;
-    left: 0;
+    width: 100vw;
+    height: 100svh;
+    display: grid;
+    grid-template-rows: clamp(3svh, 2vw + 5svh, 20svh) clamp(60vh, 70vh, 80vh) 1fr;
+    justify-items: start;
+    align-items: start;
+    container-type: inline-size;
 }
 
 .frame {
-    position: absolute;
-    top: 0;
-    left: -20%;
-    width: 100vw;
-    height: 100%;
+    grid-row: 2;
+    width: 80vw;
+    height: auto;
+    aspect-ratio: 1058/600;
     object-fit: cover;
-    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-537 0 795 425"><path d="M178.38,68.23C170.77,29.34,136.65,0,95.77,0H-537V425.49l633.15,0h162.25L178.39,68.23h-.01Z" fill="white"/></svg>') no-repeat center/contain;
-    -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-537 0 795 425"><path d="M178.38,68.23C170.77,29.34,136.65,0,95.77,0H-537V425.49l633.15,0h162.25L178.39,68.23h-.01Z" fill="white"/></svg>') no-repeat center/contain;
+    object-position: center;
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-800 0 1058 600"><path d="M178.38,68.23C170.77,29.34,136.65,0,95.77,0H-800V600l896.15,0h162.25L178.39,68.23h-.01Z" fill="white"/></svg>') no-repeat left/contain;
 }
 
 .lines {
     position: absolute;
     top: 0;
-    left: 60%;
-    width: 8%;
-    height: 100%;
-}
-
-.line {
-    position: absolute;
-    background-color: var(--color-green);
-    width: 4px;
-    height: 100%;
-    border-radius: 0;
-    transform: skew(var(--frame-skew-angle));
-    transform-origin: center bottom;
-}
-
-.line-1 {
-    left: var(--line-spacing);
-}
-
-.line-2 {
-    left: calc(2 * var(--line-spacing));
-}
-
-.line-3 {
-    left: calc(3 * var(--line-spacing));
+    left: 47vw;
+    width: 8cqi;
+    aspect-ratio: 120/430;
 }
 
 .circle {
     position: absolute;
     top: 0;
-    left: 63.5%;
-    width: min(15vw, 80px);
-    height: min(15vw, 80px);
-    background-color: var(--color-green);
-    border-radius: 50%;
+    left: 63.5cqi;
+    width: 15cqi;
+    height: 15cqi;
 }
 
 .nrk-logo {
-    position: absolute;
-    bottom: 0;
-    left: 70%;
-    width: 350px;
-    height: auto;
+    grid-row: 2;
+    justify-self: start;
+    align-self: start;
+    height: 25vh;
+    width: auto;
+    margin-left: 5vw;
 }
 
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-    .kork-logo {
-        width: 90vw;
-        height: 40vw;
-    }
-    
-    .frame {
-        border-width: 3px;
-        border-radius: 0 30px 0 15px;
-    }
-    
-    .line {
-        height: 2px;
-    }
-    
-    .circle {
-        width: min(20vw, 60px);
-        height: min(20vw, 60px);
-    }
-}
 
 main {
     max-width: var(--max-width-container);
     margin: var(--spacing-lg) auto;
     padding: var(--spacing-lg);
+    color: var(--color-white);
 }
 
-.video-cards {
+.series-title {
+    font-size: 2rem;
+    color: var(--color-white);
+    font-weight: 900;
+    font-style: italic;
+    margin: 0 0 var(--spacing-2xl) 0;
+    text-align: center;
+}
+
+.series-cards {
     display: flex;
-    gap: var(--spacing-2xl);
+    flex-wrap: nowrap;
+    gap: var(--spacing-lg);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: var(--spacing-sm) 0;
+    container-type: inline-size;
     justify-content: center;
-    align-items: flex-start;
+}
+
+.series-cards::-webkit-scrollbar {
+    height: 8px;
+}
+
+.series-cards::-webkit-scrollbar-track {
+    background: var(--color-dark-blue);
+    border-radius: 0;
+}
+
+.series-cards::-webkit-scrollbar-thumb {
+    background: var(--color-green);
+    border-radius: 0;
+}
+
+/* Responsive card sizing with container queries */
+@container (max-width: 500px) {
+    .card {
+        flex: 0 0 calc(100% - var(--spacing-lg));
+        width: calc(100% - var(--spacing-lg));
+        min-width: calc(100% - var(--spacing-lg));
+        scroll-snap-align: start;
+    }
+}
+
+@container (min-width: 501px) and (max-width: 900px) {
+    .card {
+        flex: 0 0 calc(50% - var(--spacing-lg));
+        width: calc(50% - var(--spacing-lg));
+        min-width: calc(50% - var(--spacing-lg));
+        scroll-snap-align: start;
+    }
+}
+
+@container (min-width: 901px) {
+    .series-cards {
+        justify-content: center;
+        overflow-x: visible;
+    }
+
+    .card {
+        flex: 1;
+        max-width: 300px;
+        scroll-snap-align: none;
+    }
 }
 
 .card {
-    flex: 1;
-    max-width: 300px;
-    border-radius: var(--border-radius);
+    border-radius: 0;
     overflow: hidden;
     box-shadow: var(--shadow);
     display: flex;
@@ -178,7 +213,8 @@ main {
     margin: 0;
     font-size: 1.5rem;
     text-align: center;
-    font-weight: bold;
+    font-weight: 900;
+    font-style: normal;
 }
 
 .card video {
@@ -198,19 +234,31 @@ main {
     margin: 0;
     font-size: var(--font-size-base);
     text-align: center;
-    font-weight: bold;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .conductor-section {
     margin-top: var(--spacing-3xl);
-    padding-top: var(--spacing-3xl);
     text-align: center;
 }
 
-.conductor-section h2 {
-    font-size: 1.8rem;
+.conductor-links-box {
+    background-color: var(--color-green);
+    border-radius: 0;
+    padding: var(--spacing-lg);
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxs);
+}
+
+.conductor-links-box h2 {
+    font-size: 2rem;
     color: var(--color-dark-blue);
-    font-weight: bold;
+    font-weight: 900;
+    font-style: italic;
     margin: 0 0 var(--spacing-lg) 0;
 }
 
@@ -218,17 +266,17 @@ main {
     display: block;
     font-size: 1.5rem;
     color: var(--color-dark-blue);
-    font-weight: bold;
+    font-weight: 500;
+    font-style: normal;
     text-decoration: none;
-    margin: 0 0 var(--spacing-sm) 0;
-}
-
-.conductor-link:last-child {
-    margin-bottom: 0;
+    margin: 0;
+    padding: var(--spacing-sm);
+    transition: background-color 0.3s ease;
 }
 
 .conductor-link:hover {
-    color: var(--color-green);
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
 }
 
 .musician-section {
@@ -244,8 +292,9 @@ main {
 .newsletter-link {
     display: block;
     font-size: 2rem;
-    color: var(--color-dark-blue);
-    font-weight: bold;
+    color: var(--color-white);
+    font-weight: 900;
+    font-style: italic;
     text-decoration: none;
     margin: 0 0 var(--spacing-xs) 0;
 }
@@ -255,10 +304,166 @@ main {
 }
 
 .newsletter-subtitle {
-    font-size: var(--font-size-base);
+    font-size: 1.2rem;
+    color: var(--color-white);
+    margin: 0 0 var(--spacing-2xl) 0;
+    font-style: normal;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+}
+
+.social-link {
+    color: var(--color-white);
+    transition: color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    color: var(--color-green);
+}
+
+.social-label {
+    font-size: 0.9rem;
+    margin-top: var(--spacing-xs);
+}
+
+.media-boxes {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-2xl);
+    justify-content: center;
+}
+
+.media-box {
+    background-color: var(--color-green);
+    border-radius: 0;
+    padding: var(--spacing-lg);
+    flex: 1;
+    max-width: 250px;
+    text-align: center;
+}
+
+.media-box h3 {
     color: var(--color-dark-blue);
-    margin: 0;
+    font-weight: 900;
     font-style: italic;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Music Player Section */
+.music-player-section {
+    margin-top: var(--spacing-3xl);
+    text-align: center;
+}
+
+.music-player {
+    background-color: var(--color-green);
+    border-radius: 0;
+    padding: var(--spacing-lg);
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    flex-direction: column;
+}
+
+.music-player h2 {
+    font-size: 2rem;
+    color: var(--color-dark-blue);
+    font-weight: 900;
+    font-style: italic;
+    margin: 0 0 var(--spacing-lg) 0;
+    align-self: stretch;
+    text-align: center;
+}
+
+.music-player-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    width: 100%;
+}
+
+.play-btn {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+}
+
+.audio-visualizer {
+    display: flex;
+    align-items: end;
+    gap: 3px;
+    height: 60px;
+    flex: 1;
+    justify-content: center;
+}
+
+.frequency-bar {
+    width: 4px;
+    background-color: var(--color-dark-blue);
+    border-radius: 2px 2px 0 0;
+    animation: pulse 1.5s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+.frequency-bar:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+
+.frequency-bar:nth-child(3n) {
+    animation-delay: 0.2s;
+}
+
+.frequency-bar:nth-child(4n) {
+    animation-delay: 0.3s;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.3); }
+    50% { opacity: 1; transform: scaleY(1); }
+}
+
+.track-info {
+    text-align: left;
+    flex: 1;
+}
+
+.track-info h3 {
+    color: var(--color-dark-blue);
+    font-weight: 900;
+    font-style: normal;
+    margin: 0 0 var(--spacing-xs) 0;
+    font-size: 1.1rem;
+}
+
+.track-info p {
+    color: var(--color-dark-blue);
+    font-size: 0.9rem;
+    margin: 0;
+    opacity: 0.8;
 }
 
 /* Concert Section */
@@ -269,8 +474,9 @@ main {
 
 .concerts-section h2 {
     font-size: 2rem;
-    color: var(--color-green);
-    font-weight: bold;
+    color: var(--color-white);
+    font-weight: 900;
+    font-style: italic;
     margin: 0 0 var(--spacing-lg) 0;
     text-align: center;
 }
@@ -290,20 +496,20 @@ main {
 }
 
 .concerts-carousel::-webkit-scrollbar-track {
-    background: var(--color-light-green);
-    border-radius: 4px;
+    background: var(--color-dark-blue);
+    border-radius: 0;
 }
 
 .concerts-carousel::-webkit-scrollbar-thumb {
     background: var(--color-green);
-    border-radius: 4px;
+    border-radius: 0;
 }
 
 .concert-card {
     flex: 0 0 auto;
     width: 200px;
     background-color: var(--color-white);
-    border-radius: var(--border-radius);
+    border-radius: 0;
     overflow: hidden;
     box-shadow: var(--shadow);
 }
@@ -316,26 +522,35 @@ main {
 
 .concert-info {
     padding: var(--spacing-sm);
+    display: grid;
+    grid-template-rows: 3rem auto auto auto 1fr auto;
+    gap: var(--spacing-xs);
+    flex-grow: 1;
 }
 
 .concert-title {
     font-size: var(--font-size-base);
     color: var(--color-dark-blue);
-    font-weight: bold;
-    margin: 0 0 var(--spacing-xs) 0;
+    font-weight: 900;
+    font-style: normal;
+    margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .concert-date {
     font-size: 0.9rem;
     color: var(--color-dark-blue);
     font-weight: normal;
-    margin: 0 0 2px 0;
+    margin: 0;
 }
 
 .concert-venue {
     font-size: 0.9rem;
     color: var(--color-dark-blue);
-    margin: 0 0 var(--spacing-xs) 0;
+    margin: 0;
     font-style: italic;
 }
 
@@ -344,7 +559,7 @@ main {
     font-size: var(--font-size-base);
     color: var(--color-dark-blue);
     text-decoration: none;
-    margin: 0 0 var(--spacing-sm) 0;
+    margin: -4px 0 8px 0;
 }
 
 .concert-link:hover {
@@ -358,9 +573,11 @@ main {
     border: none;
     padding: var(--spacing-xs) var(--spacing-sm);
     font-size: var(--font-size-base);
-    font-weight: bold;
-    border-radius: var(--spacing-xs);
+    font-weight: 900;
+    font-style: normal;
+    border-radius: 0;
     cursor: pointer;
+    margin-top: 8px;
 }
 
 .ticket-btn:hover {
@@ -370,8 +587,8 @@ main {
 
 /* Footer */
 footer {
-    background-color: var(--color-dark-blue);
-    color: var(--color-white);
+    background-color: var(--color-light-green);
+    color: var(--color-dark-blue);
     text-align: center;
     padding: var(--spacing-2xl) var(--spacing-lg);
     margin-top: var(--spacing-3xl);
