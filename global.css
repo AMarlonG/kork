@@ -91,6 +91,15 @@ main {
     color: var(--color-white);
 }
 
+.main-title {
+    font-size: 4rem;
+    color: var(--color-green);
+    font-weight: 900;
+    font-style: normal;
+    margin: 0 0 var(--spacing-3xl) 0;
+    text-align: center;
+}
+
 .series-title {
     font-size: 2rem;
     color: var(--color-white);
@@ -182,6 +191,17 @@ main {
     font-style: normal;
 }
 
+.card-subtitle {
+    background-color: var(--color-green);
+    color: var(--color-dark-blue);
+    padding: var(--spacing-sm) var(--spacing-sm) 0 var(--spacing-sm);
+    margin: 0;
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: 900;
+    font-style: italic;
+}
+
 .card video {
     width: 100%;
     height: 100%;
@@ -195,7 +215,7 @@ main {
 .card .read-more {
     background-color: var(--color-green);
     color: var(--color-dark-blue);
-    padding: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-sm) var(--spacing-sm) var(--spacing-sm);
     margin: 0;
     font-size: var(--font-size-base);
     text-align: center;
@@ -490,7 +510,7 @@ main {
 
 .concert-card {
     flex: 0 0 auto;
-    width: 200px;
+    width: 250px;
     background-color: var(--color-white);
     border-radius: 0;
     overflow: hidden;
@@ -506,7 +526,7 @@ main {
 .concert-info {
     padding: var(--spacing-sm);
     display: grid;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto 3rem auto;
     gap: var(--spacing-xs);
     flex-grow: 1;
 }
