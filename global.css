@@ -70,51 +70,16 @@ body {
 
 /* Layout Components */
 header {
-    background: transparent;
+    width: 100%;
     padding: 0;
     margin: 0;
-    width: 100vw;
-    height: 100svh;
-    display: grid;
-    grid-template-rows: clamp(3svh, 2vw + 5svh, 20svh) clamp(60vh, 70vh, 80vh) 1fr;
-    justify-items: start;
-    align-items: start;
-    container-type: inline-size;
 }
 
-.frame {
-    grid-row: 2;
-    width: 80vw;
+header img {
+    width: 100%;
     height: auto;
-    aspect-ratio: 1058/600;
-    object-fit: cover;
-    object-position: center;
-    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-800 0 1058 600"><path d="M178.38,68.23C170.77,29.34,136.65,0,95.77,0H-800V600l896.15,0h162.25L178.39,68.23h-.01Z" fill="white"/></svg>') no-repeat left/contain;
-}
-
-.lines {
-    position: absolute;
-    top: 0;
-    left: 47vw;
-    width: 8cqi;
-    aspect-ratio: 120/430;
-}
-
-.circle {
-    position: absolute;
-    top: 0;
-    left: 63.5cqi;
-    width: 15cqi;
-    height: 15cqi;
-}
-
-.nrk-logo {
-    grid-row: 2;
-    justify-self: start;
-    align-self: start;
-    height: 25vh;
-    width: auto;
-    margin-left: 5vw;
+    display: block;
+    margin-top: -3px;
 }
 
 
@@ -131,7 +96,7 @@ main {
     color: var(--color-white);
     font-weight: 900;
     font-style: italic;
-    margin: 0 0 var(--spacing-2xl) 0;
+    margin: 0 0 var(--spacing-lg) 0;
     text-align: center;
 }
 
@@ -238,7 +203,12 @@ main {
     font-style: normal;
 }
 
-.conductor-section {
+.series-section {
+    margin-top: var(--spacing-3xl);
+    text-align: center;
+}
+
+.om-kork-section {
     margin-top: var(--spacing-3xl);
     text-align: center;
 }
@@ -306,8 +276,17 @@ main {
 .newsletter-subtitle {
     font-size: 1.2rem;
     color: var(--color-white);
-    margin: 0 0 var(--spacing-2xl) 0;
+    margin: 0 0 var(--spacing-3xl) 0;
     font-style: normal;
+}
+
+.social-title {
+    font-size: 1.5rem;
+    color: var(--color-white);
+    font-weight: 900;
+    font-style: italic;
+    margin: 0 0 var(--spacing-lg) 0;
+    text-align: center;
 }
 
 .social-icons {
@@ -334,10 +313,14 @@ main {
     margin-top: var(--spacing-xs);
 }
 
+.media-section {
+    margin-top: var(--spacing-3xl);
+    text-align: center;
+}
+
 .media-boxes {
     display: flex;
     gap: var(--spacing-lg);
-    margin-top: var(--spacing-2xl);
     justify-content: center;
 }
 
@@ -523,7 +506,7 @@ main {
 .concert-info {
     padding: var(--spacing-sm);
     display: grid;
-    grid-template-rows: 3rem auto auto auto 1fr auto;
+    grid-template-rows: auto auto auto;
     gap: var(--spacing-xs);
     flex-grow: 1;
 }
@@ -560,6 +543,7 @@ main {
     color: var(--color-dark-blue);
     text-decoration: none;
     margin: -4px 0 8px 0;
+    text-align: left;
 }
 
 .concert-link:hover {
@@ -583,6 +567,14 @@ main {
 .ticket-btn:hover {
     background-color: var(--color-dark-blue);
     color: var(--color-green);
+}
+
+.title-row {
+    display: block;
+}
+
+.date-venue-row {
+    display: block;
 }
 
 /* Footer */
