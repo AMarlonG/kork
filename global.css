@@ -286,6 +286,188 @@ main {
   text-align: center;
 }
 
+/* Program CTA on frontpage */
+.program-cta-section {
+  margin-top: var(--spacing-3xl);
+  text-align: center;
+}
+
+.program-cta {
+  display: inline-block;
+  background-color: var(--color-green);
+  color: var(--color-dark-blue);
+  font-size: 2rem;
+  font-weight: 900;
+  font-style: italic;
+  padding: var(--spacing-lg) var(--spacing-2xl);
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-cta:hover {
+  transform: translateY(-4px);
+}
+
+/* Program page */
+.program-hero {
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+  padding: var(--spacing-3xl) var(--spacing-lg);
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.program-hero__breadcrumb {
+  color: var(--color-light-green);
+  text-decoration: none;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: var(--spacing-md);
+}
+
+.program-hero__breadcrumb:hover {
+  color: var(--color-white);
+}
+
+.program-hero__title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 0 0 var(--spacing-md) 0;
+  color: var(--color-green);
+}
+
+.program-hero__lead {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-wrap: balance;
+}
+
+@media (max-width: 768px) {
+  .program-hero {
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+
+  .program-hero__title {
+    font-size: 2.5rem;
+  }
+}
+
+.program-filters {
+  max-width: var(--max-width-container);
+  margin: var(--spacing-sm) auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.program-filters__title {
+  font-size: 2rem;
+  font-weight: 900;
+  font-style: italic;
+  color: var(--color-green);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.filter-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.series-links-bottom {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  margin: var(--spacing-3xl) auto;
+  flex-wrap: nowrap;
+  max-width: var(--max-width-container);
+  padding: 0 var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .series-links-bottom {
+    flex-wrap: wrap;
+  }
+}
+
+.series-links-bottom a {
+  background-color: var(--color-green);
+  color: var(--color-dark-blue);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: var(--spacing-sm) var(--spacing-md);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.series-links-bottom a:hover {
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.filter-buttons {
+  display: flex;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
+  border: 2px solid transparent;
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-family-base);
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-green);
+}
+
+.filter-btn--active {
+  background: var(--color-green);
+  color: var(--color-dark-blue);
+  font-weight: 900;
+}
+
+.program-concerts {
+  max-width: var(--max-width-container);
+  margin: var(--spacing-2xl) auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+}
+
+@media (max-width: 1024px) {
+  .program-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .program-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 500px) {
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .conductor-links-box {
   background-color: var(--color-green);
   border-radius: 0;
@@ -889,6 +1071,7 @@ footer p:last-child {
   margin: 0;
   font-size: 1.1rem;
   line-height: 1.6;
+  text-wrap: balance;
 }
 
 .series-highlight cite {
@@ -936,6 +1119,9 @@ footer p:last-child {
   display: grid;
   gap: var(--spacing-xs);
   width: 280px;
+  min-width: 280px;
+  max-width: 280px;
+  flex-shrink: 0;
 }
 
 .series-media__item span {
