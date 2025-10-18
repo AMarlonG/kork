@@ -700,7 +700,6 @@ main {
 /* Concert Section */
 .concerts-section {
   margin-top: var(--spacing-3xl);
-  padding-top: var(--spacing-2xl);
 }
 
 .concerts-section h2 {
