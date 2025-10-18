@@ -16,12 +16,15 @@
         <h2 class="main-title">Hele landets orkester</h2>
 
         <section class="program-cta-section">
-            <a href="program.html" class="program-cta">Se alle våre konserter her →</a>
+            <div class="program-cta-box">
+                <p class="program-cta-intro">Vi spiller alt fra pop, jazz, hip hop og nye verk, til klassiske favoritter.</p>
+                <a href="program.html" class="program-cta">Se alle våre konserter her →</a>
+            </div>
         </section>
 
         <!-- Series Cards Section -->
         <section class="series-section">
-            <h2 class="series-title">Se hvor Kork spiller</h2>
+            <h2 class="series-title">Les mer om våre konsertserier</h2>
             <div class="series-cards">
                 <div class="card">
                     <h3 class="card-title">Kork i Aulaen</h3>
@@ -211,12 +214,24 @@
                     <div class="frequency-bar" style="height: 40%"></div>
                 </div>
                     <div class="track-info">
-                        <h3>Griegs Pianokonsert i a-moll</h3>
-                        <p>NRK Kringkastingsorkestret • Leif Ove Andsnes</p>
+                        <h3>Tsjajkovskijs fiolinkonsert</h3>
+                        <p>NRK Kringkastingsorkestret</p>
+                        <p>Johan Dalene, fiolin</p>
+                        <p>Nicolas Ellis, dirigent</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <script>
+            // Music player functionality
+            const playBtn = document.getElementById('playBtn');
+            const audioUrl = 'https://radio.nrk.no/serie/paa-konsert-med-kork/MKKL15003925';
+
+            playBtn.addEventListener('click', function() {
+                window.open(audioUrl, '_blank');
+            });
+        </script>
 
         <!-- Newsletter Section -->
         <section class="newsletter-section">
@@ -251,7 +266,7 @@
                 <div class="series-media__item">
                     <span>NRK Radio</span>
                     <p>Lytt til konserter, prøvespill og samtaler om musikk. Følg Kork på NRK P2 og i podcast-appen.</p>
-                    <a href="https://radio.nrk.no/podkast/kork">Hør Kork i NRK Radio →</a>
+                    <a href="https://radio.nrk.no/serie/paa-konsert-med-kork">Hør Kork i NRK Radio →</a>
                 </div>
             </div>
         </section>

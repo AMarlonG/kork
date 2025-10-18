@@ -292,20 +292,34 @@ main {
   text-align: center;
 }
 
-.program-cta {
+.program-cta-box {
   display: inline-block;
   background-color: var(--color-green);
+  padding: var(--spacing-lg) var(--spacing-2xl);
+  transition: transform 0.3s ease;
+}
+
+.program-cta-box:hover {
+  transform: translateY(-4px);
+}
+
+.program-cta-intro {
+  color: var(--color-dark-blue);
+  font-size: 1.3rem;
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.program-cta {
+  display: inline-block;
   color: var(--color-dark-blue);
   font-size: 2rem;
   font-weight: 900;
   font-style: italic;
-  padding: var(--spacing-lg) var(--spacing-2xl);
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .program-cta:hover {
-  transform: translateY(-4px);
+  text-decoration: underline;
 }
 
 /* Program page */
