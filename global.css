@@ -1048,7 +1048,7 @@ footer p:last-child {
 .concert-hero {
   background-color: var(--color-dark-blue);
   color: var(--color-white);
-  padding: var(--spacing-3xl) var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg) var(--spacing-3xl) var(--spacing-lg);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-3xl);
@@ -1177,6 +1177,11 @@ footer p:last-child {
 
 .concert-overview h2 {
   margin-top: 0;
+  margin-bottom: var(--spacing-md);
+}
+
+.concert-overview > div p {
+  margin-bottom: var(--spacing-md);
 }
 
 .concert-overview__facts {
@@ -1189,7 +1194,7 @@ footer p:last-child {
 
 .concert-overview__facts h3 {
   font-weight: 900;
-  color: var(--color-white);
+  color: var(--color-green);
   font-size: 1.2rem;
   margin: var(--spacing-md) 0 var(--spacing-xs) 0;
 }
@@ -1198,23 +1203,18 @@ footer p:last-child {
   margin-top: 0;
 }
 
-.performer-item {
-  background: rgba(255, 255, 255, 0.05);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-left: 3px solid var(--color-green);
-  display: grid;
-  gap: 2px;
-}
-
-.performer-item strong {
+.performer-name {
   color: var(--color-white);
   font-weight: 700;
   font-size: 1rem;
+  margin: 0 0 0.3rem 0;
+  line-height: 1.1;
 }
 
-.performer-item span {
+.performer-role {
   color: var(--color-light-green);
   font-size: 0.9rem;
+  font-weight: 400;
 }
 
 .practical-info {
@@ -1243,29 +1243,26 @@ footer p:last-child {
 }
 
 .program-title {
-  font-size: 1.8rem;
   color: var(--color-white);
-  font-weight: 900;
-  font-style: italic;
-  margin: var(--spacing-2xl) 0 var(--spacing-lg) 0;
+  margin: var(--spacing-3xl) 0 var(--spacing-md) 0;
 }
 
 .concert-program__list {
   display: grid;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-md);
+  max-width: 100%;
 }
 
 .concert-program__item {
-  background: rgba(255, 255, 255, 0.08);
-  border-left: 4px solid var(--color-green);
+  border: none;
+  background: none;
 }
 
 .concert-program__item summary {
-  padding: var(--spacing-sm) var(--spacing-lg);
   cursor: pointer;
   list-style: none;
-  display: grid;
-  gap: var(--spacing-xxs);
+  display: block;
+  padding: 0;
 }
 
 .concert-program__item summary::-webkit-details-marker {
@@ -1273,38 +1270,38 @@ footer p:last-child {
 }
 
 .concert-program__item summary::before {
-  content: "▶";
+  content: "▶ ";
   color: var(--color-green);
   font-size: 0.8rem;
-  display: inline-block;
-  margin-right: var(--spacing-xs);
 }
 
 .concert-program__item[open] summary::before {
-  content: "▼";
+  content: "▼ ";
 }
 
 .concert-program__item summary strong {
-  font-size: 1.1rem;
-  color: var(--color-green);
-  font-weight: 900;
+  font-size: 1rem;
+  color: var(--color-white);
+  font-weight: 700;
 }
 
 .concert-program__item summary span {
-  font-size: 0.95rem;
-  color: var(--color-light-green);
+  font-size: 1rem;
+  color: var(--color-white);
+  margin-left: var(--spacing-xs);
 }
 
 .program-description {
-  padding: 0 var(--spacing-lg) var(--spacing-md) var(--spacing-lg);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: var(--spacing-xs);
+  padding: var(--spacing-xs) 0 0 var(--spacing-md);
+  margin-top: var(--spacing-xxs);
+  max-width: 100%;
 }
 
 .program-description p {
-  margin: var(--spacing-sm) 0 0 0;
+  margin: 0;
   line-height: 1.6;
   color: var(--color-white);
+  opacity: 0.9;
 }
 
 .concert-performers ul {
