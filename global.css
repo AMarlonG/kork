@@ -578,8 +578,20 @@ main {
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+
+.concert-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.concert-card-link:hover .concert-card {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
 .concert-card img {
   width: 100%;
   height: 200px;
@@ -1023,4 +1035,181 @@ footer p:last-child {
 .hero-venue-link:hover {
   color: var(--color-white);
   text-decoration: underline;
+}
+
+/* Concert detail layout */
+.concert-hero {
+  position: relative;
+  padding: var(--spacing-3xl) var(--spacing-lg);
+  background-size: cover;
+  background-position: center;
+  color: var(--color-white);
+}
+
+.concert-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(1, 64, 92, 0.85), rgba(1, 64, 92, 0.5));
+}
+
+.concert-hero__content {
+  position: relative;
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+  display: grid;
+  gap: var(--spacing-sm);
+}
+
+.concert-hero__breadcrumb {
+  color: var(--color-light-green);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.concert-hero__breadcrumb:hover {
+  color: var(--color-white);
+}
+
+.concert-hero__title {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.concert-hero__lead {
+  font-size: 1.2rem;
+  margin: 0;
+  max-width: 760px;
+}
+
+.concert-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.concert-hero__meta-item {
+  background: rgba(255, 255, 255, 0.15);
+  padding: var(--spacing-xxs) var(--spacing-sm);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.concert-hero__actions {
+  margin-top: var(--spacing-sm);
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.concert-overview {
+  max-width: var(--max-width-container);
+  margin: var(--spacing-3xl) auto 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: grid;
+  gap: var(--spacing-lg);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.concert-overview h2 {
+  margin-top: 0;
+}
+
+.concert-overview__facts {
+  background: rgba(255, 255, 255, 0.08);
+  padding: var(--spacing-lg);
+  border-left: 4px solid var(--color-green);
+  display: grid;
+  gap: var(--spacing-xs);
+}
+
+.concert-overview__facts dt {
+  font-weight: 900;
+  color: var(--color-green);
+}
+
+.concert-overview__facts dd {
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.concert-program,
+.concert-performers,
+.concert-practical,
+.concert-map,
+.concert-related {
+  max-width: var(--max-width-container);
+  margin: var(--spacing-3xl) auto 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.concert-program__list {
+  display: grid;
+  gap: var(--spacing-sm);
+}
+
+.concert-program__item {
+  background: rgba(255, 255, 255, 0.08);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  display: grid;
+  gap: var(--spacing-xxs);
+  border-left: 4px solid var(--color-green);
+}
+
+.concert-program__item span {
+  font-size: 0.95rem;
+  color: var(--color-light-green);
+}
+
+.concert-performers ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--spacing-xs);
+}
+
+.concert-performers li {
+  background: rgba(255, 255, 255, 0.08);
+  padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+.concert-practical__grid {
+  display: grid;
+  gap: var(--spacing-lg);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.concert-practical__card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: var(--spacing-lg);
+  display: grid;
+  gap: var(--spacing-xs);
+  border-left: 4px solid var(--color-green);
+}
+
+.concert-map iframe {
+  width: 100%;
+  border: 0;
+  height: 360px;
+}
+
+.concert-related__grid {
+  display: grid;
+  gap: var(--spacing-lg);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.concert-hero--aapningsgalla {
+  background-image: url('https://images.unsplash.com/photo-1446057032654-9d8885db76c6?auto=format&fit=crop&w=2400&q=80&ixlib=rb-4.0.3');
+}
+
+@media (max-width: 768px) {
+  .concert-hero__title {
+    font-size: 2.4rem;
+  }
+
+  .concert-hero {
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
 }
