@@ -273,6 +273,14 @@ main {
   margin-top: var(--spacing-3xl);
 }
 
+.series-feature-grid + .series-media {
+  margin-top: var(--spacing-3xl);
+}
+
+.series-media + .newsletter-section {
+  margin-top: var(--spacing-3xl);
+}
+
 .om-kork-section {
   margin-top: var(--spacing-3xl);
   text-align: center;
@@ -996,3 +1004,23 @@ footer p:last-child {
 }
 
 
+
+.concert-venue-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.concert-venue-link:hover {
+  text-decoration: underline;
+  color: var(--color-green);
+}
+
+.hero-venue-link {
+  color: var(--color-light-green);
+  text-decoration: none;
+}
+
+.hero-venue-link:hover {
+  color: var(--color-white);
+  text-decoration: underline;
+}
