@@ -9,21 +9,27 @@
 </head>
 <body>
     <main>
-        <section class="concert-hero concert-hero--aapningsgalla">
+        <section class="concert-hero">
             <div class="concert-hero__content">
                 <a class="concert-hero__breadcrumb" href="index.html">← Til forsiden</a>
                 <h1 class="concert-hero__title">Åpningsgalla: Nordiske lys</h1>
-                <p class="concert-hero__lead">Sesongåpningen står i Nordens tegn når KORK og solistene inviterer til stor gala i Universitetets Aula. Vi kombinerer ikoniske verk og nyskrevne bestillinger for å markere starten på konsertsesongen.</p>
-                <div class="concert-hero__meta">
-                    <span class="concert-hero__meta-item">Dato: fredag 7. september 2024 kl. 19.30</span>
-                    <span class="concert-hero__meta-item">Sted: <a href="https://maps.app.goo.gl/bLCuNJK92xEH2veo7" class="hero-venue-link">Universitetets Aula, Oslo (trykk for kart) →</a></span>
-                    <span class="concert-hero__meta-item">Serie: KORK i Aulaen</span>
-                    <span class="concert-hero__meta-item">Varighet: ca. 2 timer inkl. pause</span>
-                </div>
+                <p class="concert-hero__lead">Sesongåpningen står i Nordens tegn når KORK og solistene inviterer til stor gala i Universitetets Aula.</p>
+                <dl class="concert-hero__facts">
+                    <dt>Dato</dt>
+                    <dd>Fredag 7. september 2024 kl. 19.30</dd>
+                    <dt>Sted</dt>
+                    <dd><a href="https://maps.app.goo.gl/bLCuNJK92xEH2veo7" class="hero-venue-link">Universitetets Aula, Oslo</a></dd>
+                    <dt>Serie</dt>
+                    <dd>KORK i Aulaen</dd>
+                    <dt>Varighet</dt>
+                    <dd>Ca. 2 timer inkl. pause</dd>
+                </dl>
                 <div class="concert-hero__actions">
-                    <button class="ticket-btn" onclick="window.location.href='https://www.ticketmaster.no/event/kork-nordiske-lys-billetter/0001'">Kjøp billett</button>
-                    <button class="ticket-btn" onclick="window.location.href='kork-i-aulaen.html#konserter'">Se flere konserter i Aulaen</button>
+                    <button class="ticket-btn" onclick="window.location.href='https://www.ticketmaster.no/event/kork-nordiske-lys-billetter/0001'">Kjøp billetter her →</button>
                 </div>
+            </div>
+            <div class="concert-hero__image">
+                <img src="https://images.unsplash.com/photo-1446057032654-9d8885db76c6?auto=format&fit=crop&w=1600&q=80&ixlib=rb-4.0.3" alt="Dirigent i aksjon">
             </div>
         </section>
 
@@ -32,51 +38,72 @@
                 <h2>Om konserten</h2>
                 <p>Kveldens program binder sammen nordiske mesterverk og nyskrevet musikk. Griegs tidløse klaverkonsert møter premiere på Synne Skouens bestillingsverk, og kvelden avrundes med spektakulære orkesterklanger under Holly Hyun Choe.</p>
                 <p>Vi setter av ekstra tid til introduksjoner fra scenen slik at publikum får innsikt i verkene og relasjonene mellom dem. Etter pausen inviteres du til uformell prat med musikere og solister i Aulaens foajé.</p>
-            </div>
-            <dl class="concert-overview__facts">
-                <dt>Dirigent</dt>
-                <dd>Holly Hyun Choe</dd>
-                <dt>Solist</dt>
-                <dd>Christian Ihle Hadland, klaver</dd>
-                <dt>Dørene åpner</dt>
-                <dd>18.45 – enkel servering fra Sentralen pop-up bar</dd>
-                <dt>Arrangement</dt>
-                <dd>Produsert av NRK Kringkastingsorkestret i samarbeid med Universitetet i Oslo</dd>
-            </dl>
-        </section>
 
-        <section class="concert-program">
-            <h2>Program</h2>
-            <div class="concert-program__list">
-                <div class="concert-program__item">
-                    <strong>Jean Sibelius</strong>
-                    <span>Karelia-suite, op. 11</span>
-                </div>
-                <div class="concert-program__item">
-                    <strong>Edvard Grieg</strong>
-                    <span>Klaverkonsert i a-moll, op. 16</span>
-                    <span>Solist: Christian Ihle Hadland</span>
-                </div>
-                <div class="concert-program__item">
-                    <strong>Synne Skouen</strong>
-                    <span>«Nordiske lys» – bestillingsverk (urframføring)</span>
-                </div>
-                <div class="concert-program__item">
-                    <strong>Johan Halvorsen</strong>
-                    <span>Bojarenes inntogsmarsj</span>
+                <h3 class="program-title">Program</h3>
+                <div class="concert-program__list">
+                    <details class="concert-program__item">
+                        <summary>
+                            <strong>Jean Sibelius</strong>
+                            <span>Karelia-suite, op. 11</span>
+                        </summary>
+                        <div class="program-description">
+                            <p>Karelia-suiten er et av Sibelius' mest folkekjære verk. Musikken ble opprinnelig skrevet til et historisk tableauspill i 1893, og suiten består av tre satser som maler levende bilder av den finske Karelia-regionen.</p>
+                        </div>
+                    </details>
+                    <details class="concert-program__item">
+                        <summary>
+                            <strong>Edvard Grieg</strong>
+                            <span>Klaverkonsert i a-moll, op. 16</span>
+                            <span>Solist: Christian Ihle Hadland</span>
+                        </summary>
+                        <div class="program-description">
+                            <p>Griegs eneste klaverkonsert er en av de mest elskede i repertoaret. Skrevet da komponisten var bare 24 år gammel, kombinerer verket norsk folkemusikk med romantisk storslåtthet. Den berømte åpningen med trommeslagene er umiddelbart gjenkjennelig.</p>
+                        </div>
+                    </details>
+                    <details class="concert-program__item">
+                        <summary>
+                            <strong>Synne Skouen</strong>
+                            <span>«Nordiske lys» – bestillingsverk (urframføring)</span>
+                        </summary>
+                        <div class="program-description">
+                            <p>I dette nye bestillingsverket for KORK utforsker Synne Skouen de nordiske lysfenomenene – fra midnattssol til mørketid. Verket får sin urframføring på denne konserten.</p>
+                        </div>
+                    </details>
+                    <details class="concert-program__item">
+                        <summary>
+                            <strong>Johan Halvorsen</strong>
+                            <span>Bojarenes inntogsmarsj</span>
+                        </summary>
+                        <div class="program-description">
+                            <p>Halvorsens festlige marsj er hentet fra musikken til skuespillet "Kongedatterens brudeferd". Den pompøse og fargerike musikken skildrer bojarenes (russiske adelsmenn) høytidelige inntog.</p>
+                        </div>
+                    </details>
                 </div>
             </div>
-        </section>
-
-        <section class="concert-performers">
-            <h2>Medvirkende</h2>
-            <ul>
-                <li><strong>Kringkastingsorkestret</strong></li>
-                <li><strong>Holly Hyun Choe</strong> – sjefsdirigent</li>
-                <li><strong>Christian Ihle Hadland</strong> – klaver</li>
-                <li><strong>Camilla Kjøll</strong> – konsertmester</li>
-                <li><strong>Ina Kringlebotn</strong> – programleder</li>
-            </ul>
+            <div class="concert-overview__facts">
+                <h3>Medvirkende</h3>
+                <div class="performer-item">
+                    <strong>Kringkastingsorkestret</strong>
+                </div>
+                <div class="performer-item">
+                    <strong>Holly Hyun Choe</strong>
+                    <span>Sjefsdirigent</span>
+                </div>
+                <div class="performer-item">
+                    <strong>Christian Ihle Hadland</strong>
+                    <span>Klaver</span>
+                </div>
+                <div class="performer-item">
+                    <strong>Camilla Kjøll</strong>
+                    <span>Konsertmester</span>
+                </div>
+                <div class="performer-item">
+                    <strong>Ina Kringlebotn</strong>
+                    <span>Programleder</span>
+                </div>
+                <h3>Praktisk</h3>
+                <p class="practical-info">Dørene åpner 18.45 – enkel servering fra Sentralen pop-up bar</p>
+            </div>
         </section>
 
         <section class="concert-practical">
@@ -101,28 +128,8 @@
             </div>
         </section>
 
-        <section class="concert-map">
-            <h2>Slik finner du fram</h2>
-            <p><a class="concert-venue-link" href="https://maps.app.goo.gl/bLCuNJK92xEH2veo7">Universitetets Aula, Karl Johans gate 47, Oslo (åpnes i Google Maps) →</a></p>
-            <iframe title="Kart til Universitetets Aula" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999.3533030900214!2d10.735662877429606!3d59.9115459749184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416e885e5465f5%3A0x5129e8cbe59c126b!2sUniversitetets%20Aula!5e0!3m2!1sno!2sno!4v1717320000000" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </section>
-
-        <section class="concert-related">
-            <h2>Mer å utforske</h2>
-            <div class="concert-related__grid">
-                <div class="series-media__item">
-                    <span>Repertoar</span>
-                    <a href="https://tv.nrk.no/">Se tidligere KORK-opptak i NRK TV →</a>
-                </div>
-                <div class="series-media__item">
-                    <span>NRK Klassisk</span>
-                    <a href="https://radio.nrk.no/direkte/klassisk">Hør KORK på NRK Klassisk →</a>
-                </div>
-                <div class="series-media__item">
-                    <span>Serie</span>
-                    <a href="kork-i-aulaen.html">Les mer om KORK i Aulaen →</a>
-                </div>
-            </div>
+        <section class="concert-series-cta">
+            <button class="ticket-btn" onclick="window.location.href='kork-i-aulaen.html#konserter'">Se alle konsertene i Aula-serien her →</button>
         </section>
 
         <section class="newsletter-section">

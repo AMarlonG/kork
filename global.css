@@ -578,6 +578,7 @@ main {
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
+  position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -649,6 +650,10 @@ main {
   align-items: stretch;
 }
 
+.concert-card .concert-link {
+  display: none;
+}
+
 .concert-link {
   display: inline-flex;
   justify-content: flex-start;
@@ -673,6 +678,8 @@ main {
   font-style: normal;
   border-radius: 0;
   cursor: pointer;
+  position: relative;
+  z-index: 10;
 }
 
 .ticket-btn:hover {
@@ -1039,26 +1046,43 @@ footer p:last-child {
 
 /* Concert detail layout */
 .concert-hero {
-  position: relative;
-  padding: var(--spacing-3xl) var(--spacing-lg);
-  background-size: cover;
-  background-position: center;
+  background-color: var(--color-dark-blue);
   color: var(--color-white);
-}
-
-.concert-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(115deg, rgba(1, 64, 92, 0.85), rgba(1, 64, 92, 0.5));
+  padding: var(--spacing-3xl) var(--spacing-lg);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+  align-items: center;
 }
 
 .concert-hero__content {
-  position: relative;
-  max-width: var(--max-width-container);
-  margin: 0 auto;
   display: grid;
   gap: var(--spacing-sm);
+}
+
+.concert-hero__image {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+}
+
+.concert-hero__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .concert-hero {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .concert-hero__image {
+    min-height: 300px;
+  }
 }
 
 .concert-hero__breadcrumb {
@@ -1096,11 +1120,43 @@ footer p:last-child {
   letter-spacing: 0.02em;
 }
 
+.concert-hero__facts {
+  background: rgba(255, 255, 255, 0.08);
+  padding: var(--spacing-lg);
+  border-left: 4px solid var(--color-green);
+  display: grid;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-md);
+}
+
+.concert-hero__facts dt {
+  font-weight: 900;
+  color: var(--color-green);
+}
+
+.concert-hero__facts dd {
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.concert-hero__facts a {
+  color: var(--color-light-green);
+  text-decoration: none;
+}
+
+.concert-hero__facts a:hover {
+  text-decoration: underline;
+}
+
 .concert-hero__actions {
-  margin-top: var(--spacing-sm);
+  margin-top: var(--spacing-md);
   display: flex;
   gap: var(--spacing-sm);
   flex-wrap: wrap;
+}
+
+.concert-hero__actions .ticket-btn {
+  font-size: 1.2rem;
+  padding: var(--spacing-sm) var(--spacing-lg);
 }
 
 .concert-overview {
@@ -1109,7 +1165,14 @@ footer p:last-child {
   padding: 0 var(--spacing-lg);
   display: grid;
   gap: var(--spacing-lg);
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr 400px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .concert-overview {
+    grid-template-columns: 1fr;
+  }
 }
 
 .concert-overview h2 {
@@ -1121,16 +1184,44 @@ footer p:last-child {
   padding: var(--spacing-lg);
   border-left: 4px solid var(--color-green);
   display: grid;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-sm);
 }
 
-.concert-overview__facts dt {
+.concert-overview__facts h3 {
   font-weight: 900;
-  color: var(--color-green);
+  color: var(--color-white);
+  font-size: 1.2rem;
+  margin: var(--spacing-md) 0 var(--spacing-xs) 0;
 }
 
-.concert-overview__facts dd {
-  margin: 0 0 var(--spacing-xs) 0;
+.concert-overview__facts h3:first-child {
+  margin-top: 0;
+}
+
+.performer-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-left: 3px solid var(--color-green);
+  display: grid;
+  gap: 2px;
+}
+
+.performer-item strong {
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.performer-item span {
+  color: var(--color-light-green);
+  font-size: 0.9rem;
+}
+
+.practical-info {
+  color: var(--color-white);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .concert-program,
@@ -1143,6 +1234,22 @@ footer p:last-child {
   padding: 0 var(--spacing-lg);
 }
 
+.concert-practical {
+  text-align: center;
+}
+
+.concert-practical h2 {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.program-title {
+  font-size: 1.8rem;
+  color: var(--color-white);
+  font-weight: 900;
+  font-style: italic;
+  margin: var(--spacing-2xl) 0 var(--spacing-lg) 0;
+}
+
 .concert-program__list {
   display: grid;
   gap: var(--spacing-sm);
@@ -1150,15 +1257,54 @@ footer p:last-child {
 
 .concert-program__item {
   background: rgba(255, 255, 255, 0.08);
-  padding: var(--spacing-sm) var(--spacing-lg);
-  display: grid;
-  gap: var(--spacing-xxs);
   border-left: 4px solid var(--color-green);
 }
 
-.concert-program__item span {
+.concert-program__item summary {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  cursor: pointer;
+  list-style: none;
+  display: grid;
+  gap: var(--spacing-xxs);
+}
+
+.concert-program__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.concert-program__item summary::before {
+  content: "▶";
+  color: var(--color-green);
+  font-size: 0.8rem;
+  display: inline-block;
+  margin-right: var(--spacing-xs);
+}
+
+.concert-program__item[open] summary::before {
+  content: "▼";
+}
+
+.concert-program__item summary strong {
+  font-size: 1.1rem;
+  color: var(--color-green);
+  font-weight: 900;
+}
+
+.concert-program__item summary span {
   font-size: 0.95rem;
   color: var(--color-light-green);
+}
+
+.program-description {
+  padding: 0 var(--spacing-lg) var(--spacing-md) var(--spacing-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: var(--spacing-xs);
+}
+
+.program-description p {
+  margin: var(--spacing-sm) 0 0 0;
+  line-height: 1.6;
+  color: var(--color-white);
 }
 
 .concert-performers ul {
@@ -1188,10 +1334,27 @@ footer p:last-child {
   border-left: 4px solid var(--color-green);
 }
 
-.concert-map iframe {
-  width: 100%;
-  border: 0;
-  height: 360px;
+.concert-practical__card a {
+  color: var(--color-green);
+  text-decoration: underline;
+}
+
+.concert-practical__card a:hover {
+  color: var(--color-light-green);
+}
+
+.concert-series-cta {
+  max-width: var(--max-width-container);
+  margin: var(--spacing-3xl) auto 0 auto;
+  padding: 0 var(--spacing-lg);
+  text-align: center;
+}
+
+.concert-series-cta .ticket-btn {
+  width: auto;
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: var(--spacing-md) var(--spacing-2xl);
 }
 
 .concert-related__grid {
@@ -1200,9 +1363,6 @@ footer p:last-child {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-.concert-hero--aapningsgalla {
-  background-image: url('https://images.unsplash.com/photo-1446057032654-9d8885db76c6?auto=format&fit=crop&w=2400&q=80&ixlib=rb-4.0.3');
-}
 
 @media (max-width: 768px) {
   .concert-hero__title {
