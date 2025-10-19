@@ -101,13 +101,40 @@ main {
   color: var(--color-white);
 }
 
+.hero-section {
+  text-align: center;
+  margin-bottom: 10rem;
+}
+
 .main-title {
   font-size: 4rem;
   color: var(--color-green);
   font-weight: 900;
   font-style: normal;
-  margin: 0 0 var(--spacing-3xl) 0;
+  margin: 0 0 var(--spacing-md) 0;
   text-align: center;
+}
+
+.hero-intro {
+  font-size: 1.5rem;
+  color: var(--color-white);
+  margin: 0 0 var(--spacing-md) 0;
+  max-width: 70ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-link {
+  display: inline-block;
+  font-size: 2rem;
+  color: var(--color-green);
+  font-weight: 900;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.hero-link:hover {
+  color: var(--color-white);
 }
 
 .series-title {
@@ -284,42 +311,6 @@ main {
 .om-kork-section {
   margin-top: var(--spacing-3xl);
   text-align: center;
-}
-
-/* Program CTA on frontpage */
-.program-cta-section {
-  margin-top: var(--spacing-3xl);
-  text-align: center;
-}
-
-.program-cta-box {
-  display: inline-block;
-  background-color: var(--color-green);
-  padding: var(--spacing-lg) var(--spacing-2xl);
-  transition: transform 0.3s ease;
-}
-
-.program-cta-box:hover {
-  transform: translateY(-4px);
-}
-
-.program-cta-intro {
-  color: var(--color-dark-blue);
-  font-size: 1.3rem;
-  margin: 0 0 var(--spacing-sm) 0;
-}
-
-.program-cta {
-  display: inline-block;
-  color: var(--color-dark-blue);
-  font-size: 2rem;
-  font-weight: 900;
-  font-style: italic;
-  text-decoration: none;
-}
-
-.program-cta:hover {
-  text-decoration: underline;
 }
 
 /* Program page */
@@ -858,6 +849,28 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xxs);
+}
+
+/* Page Navigation */
+.page-navigation {
+  margin-top: var(--spacing-3xl);
+  padding-top: var(--spacing-3xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  gap: var(--spacing-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.page-nav-link {
+  color: var(--color-light-green);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.page-nav-link:hover {
+  color: var(--color-white);
 }
 
 /* Footer */
@@ -1727,6 +1740,18 @@ footer p:last-child {
 
 .person-fact-box dd:last-child {
   margin-bottom: 0;
+}
+
+.person-fact-box dd ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  list-style-type: disc;
+  display: grid;
+  gap: var(--spacing-xxs);
+}
+
+.person-fact-box dd ul li {
+  line-height: 1.5;
 }
 
 .person-quote {
